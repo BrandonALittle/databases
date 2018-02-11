@@ -4,20 +4,18 @@ USE chat;
 
 CREATE TABLE users (
 /*uniq id for each message, messageText, username, roomname, createaAt */
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(20),
-  PRIMARY KEY(id)
+  PRIMARY KEY(ID)
 );
 
 CREATE TABLE messages (
 /*uniq id for each message, messageText, username, roomname, createaAt */
-  id INT,
-  username INT,
-  msg_text VARCHAR(140),
+  id INT NOT NULL AUTO_INCREMENT,
+  userid INT NOT NULL,
+  msg_text VARCHAR(140) NOT NULL,
   roomname VARCHAR(20),
-  createdAt DATE,
-  PRIMARY KEY(id),
-  FOREIGN KEY (username) REFERENCES users(id)
+  PRIMARY KEY(ID)
 );
 /*CONSTRAINT (username) foreign key users_id REFERENCES users(id)
 
